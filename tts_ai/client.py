@@ -130,16 +130,19 @@ class TTSClient:
                 # Handle error responses
                 self._handle_error_response(resp)
 
-            except (TTSError, AuthenticationError, InsufficientCreditsError,
-                    ModelNotFoundError) as e:
-                raise e
-
             except RateLimitError as e:
                 last_exc = e
                 if attempt < self.max_retries:
                     wait = min(2 ** attempt, 60)
                     time.sleep(wait)
                     continue
+                raise e
+
+            except (AuthenticationError, InsufficientCreditsError,
+                    ModelNotFoundError) as e:
+                raise e
+
+            except TTSError as e:
                 raise e
 
             except requests.exceptions.Timeout:

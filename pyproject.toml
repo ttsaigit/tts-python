@@ -43,7 +43,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://tts.ai"
-Documentation = "https://tts.ai/api-docs"
+Documentation = "https://tts.ai/api/"
 Repository = "https://github.com/ttsaigit/tts-python"
 Issues = "https://github.com/ttsaigit/tts-python/issues"
 

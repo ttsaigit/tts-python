@@ -5,13 +5,13 @@ Official Python SDK for the [TTS.ai](https://tts.ai) text-to-speech API. Generat
 ## Installation
 
 ```bash
-pip install tts-ai
+pip install ttsai
 ```
 
 For async support:
 
 ```bash
-pip install tts-ai[async]
+pip install ttsai[async]
 ```
 
 ## Quick Start
